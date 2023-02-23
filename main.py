@@ -18,8 +18,5 @@ def generate_qr():
     img_io.seek(0)
 
     return send_file(img_io, mimetype='image/png')
-@app.route('/')
-def index():
-    return "check /generate_qr"
 if __name__ == '__main__':
     app.run()
