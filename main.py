@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route('/generate_qr', methods=['POST'])
 def generate_qr():
     if 'data' not in request.json:
-        return jsonify({'error': 'No data provided'}), 400
+        return jsonify({'error': 'No data provided'}), 404
 
     qr = qrcode.QRCode(version=1, box_size=10, border=4)
     qr.add_data(request.json['data'])
