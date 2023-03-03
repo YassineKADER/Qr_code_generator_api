@@ -18,5 +18,8 @@ def generate_qr():
     img_io.seek(0)
 
     return send_file(img_io, mimetype='image/png')
+@app.route('/', methods=['GET'])
+def redirect():
+    return "The Service Is Running...."
 if __name__ == '__main__':
     app.run()
